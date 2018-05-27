@@ -1,5 +1,9 @@
+---
+title: More_Effective_C++
+date: 2018-05-25 21:14:37
+tags: C++11
+---
 ## More_Effective_C++
-@(C++)
 
 [TOC]
 
@@ -13,7 +17,7 @@
 #### 不要对数组使用多态
 - 如果函数参数为父类型A，实际传入参数为子类型B，那么编译器不会报错或者警告
 - 但是因为数组每次向后，都跳过一个sizeof(A)，但数组元素实际类型为B，造成越界。
-
+<!-- more -->
 一个具体的例子：[数组和多态](https://github.com/obviouskkk/codes_cplusplus/blob/master/More_effective_cpp/item_3_ArrayPolymorphism.cpp)
 
 #### 避免无用的缺省构造函数
