@@ -1,8 +1,8 @@
 ---
 title: 左值、右值和引用
 date: 2018-05-25 21:17:37
-categories: C++
-tags: C++11
+categories: c++
+tags: c++11
 ---
 
 ## 左值、右值和引用

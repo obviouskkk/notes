@@ -5,7 +5,7 @@ categories: 工具
 tags: git
 ---
 ## git常用操作
-### 公钥
+### 生成公钥
 ```
 ssh-keygen -t rsa
 ```

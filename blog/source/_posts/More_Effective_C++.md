@@ -1,8 +1,8 @@
 ---
 title: More_Effective_C++
 date: 2018-05-25 21:14:37
-categories: C++
-tags: C++11
+categories: c++
+tags: c++11
 ---
 ### 基础
 #### 指针和引用

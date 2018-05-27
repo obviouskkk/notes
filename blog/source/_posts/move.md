@@ -2,7 +2,7 @@
 title: std::move
 date: 2018-05-25 21:28:37
 categories: c++
-tags: C++11
+tags: c++11
 ---
 
 ### 新特性的目的

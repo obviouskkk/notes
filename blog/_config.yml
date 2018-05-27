@@ -15,8 +15,8 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://107zy.cn
 root: /
-#permalink: :year/:month/:day/:title/
-permalink: :category/:title
+permalink: :year/:month/:title/
+#permalink: :category/:title
 permalink_defaults:
 
 # Directory
@@ -55,8 +55,11 @@ index_generator:
   order_by: -date
   
 # Category & Tag
+# 这个可以把中文映射成英文,和设置默认category
 default_category: uncategorized
 category_map:
+    c++ : cplusplus
+    C++ : cplusplus
 tag_map:
 
 # Date / Time format
