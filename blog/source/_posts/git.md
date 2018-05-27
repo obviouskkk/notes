@@ -1,6 +1,7 @@
 ---
 title: git 常用命令
 date: 2018-05-25 21:14:37
+categories: 工具
 tags: git
 ---
 ## git常用操作

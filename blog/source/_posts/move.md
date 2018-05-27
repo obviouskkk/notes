@@ -1,12 +1,9 @@
 ---
 title: std::move
 date: 2018-05-25 21:28:37
+categories: c++
 tags: C++11
 ---
-
-## std::move
-
-[TOC]
 
 ### 新特性的目的
 右值引用 (Rvalue Referene) 是 C++11中引入的新特性 , 它实现了转移语义 (Move Sementics) 和精确传递 (Perfect Forwarding)。它的主要目的有两个方面：
@@ -64,7 +61,7 @@ string(string&& rhs);            //move ctor
 
 - C++11中`return local_var`与`return std::move(local_var) `效果是否相同？
 
-译器就把优化几乎做到了极致——局部变量返回到函数外部并赋值给外部变量这个过程基本上不存在任何多余的临时变量构造和析构，这比move机制更加高效。
+编译器就把优化几乎做到了极致——局部变量返回到函数外部并赋值给外部变量这个过程基本上不存在任何多余的临时变量构造和析构，这比move机制更加高效。
 
 
 

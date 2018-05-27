@@ -5,7 +5,7 @@
 # Site
 title: zzy's blog
 subtitle:
-description:
+description: 欢迎来到 zzy'blog ,留下评论的同时记得留下你的邮箱哟
 keywords:
 author: zzy
 language:
@@ -15,7 +15,8 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://107zy.cn
 root: /
-permalink: :year/:month/:day/:title/
+#permalink: :year/:month/:day/:title/
+permalink: :category/:title
 permalink_defaults:
 
 # Directory

@@ -1,12 +1,9 @@
 ---
 title: More_Effective_C++
 date: 2018-05-25 21:14:37
+categories: C++
 tags: C++11
 ---
-## More_Effective_C++
-
-[TOC]
-
 ### 基础
 #### 指针和引用
 - 指针可以指向空值，可以被重新赋值；引用不可以
@@ -35,5 +32,3 @@ for (int i = 0; i < 10; ++i)
 
 - 没有默认构造函数的第二个问题：无法在很多基于模板的容器类中使用，要求`data = new T[size]`,当然`vector`不需要。
 
-
-### 运算符
