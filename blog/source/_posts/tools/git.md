@@ -23,7 +23,7 @@ ssh-keygen -t rsa
 - 改完了代码，提交：`git commit -m '$text'`  
 - 提交分支：`git push origin [name]`,如果不加`name`，会提交所有分支。
 - 删除分支：`git branch -d [name]`
-- 合并分支：`git merge [name]`，把分支合并到当前分支
+- 合并分支：`git merge [name]`，把分支合并到当前分支/提交merge request
 - 拉取分支的更新：`git checkout master;git pull origin`,拉取master的更新
 - 查看已经合并了的分支：`git branch --merged`,这个列表里面不带`*`的都可以删掉了，因为已经merged
 - 查看未合并的分支：`git branch --no-merged`,这个不能删除，只能用`git branch -D`强制删除

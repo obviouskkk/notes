@@ -9,10 +9,10 @@ tags: c++11
 右值引用 (Rvalue Referene) 是 C++11中引入的新特性 , 它实现了转移语义 (Move Sementics) 和精确传递 (Perfect Forwarding)。它的主要目的有两个方面：
 - 消除两个对象交互时不必要的对象拷贝，节省运算存储资源，提高效率。
 - 能够更简洁明确地定义泛型函数。
-<!-- more -->
 ### std::move
 首先，std::move() 并没有实际移动任何东西。
 std::move的大致实现：
+<!-- more -->
 ```cpp
 template<typename T>
 typename remove_reference<T>::type&& move(T&& param) {
