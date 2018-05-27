@@ -15,9 +15,10 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://107zy.cn
 root: /
-permalink: :year/:month/:title/
-#permalink: :category/:title
+#permalink: :year/:month/:title/
+permalink: :title/ # 最好的方案了,根据路径跟source的路径一致 ，但是这样文件夹也只能是英文了
 permalink_defaults:
+    # urlname: index
 
 # Directory
 source_dir: source
