@@ -27,3 +27,11 @@ ssh-keygen -t rsa
 - 拉取分支的更新：`git checkout master;git pull origin`,拉取master的更新
 - 查看已经合并了的分支：`git branch --merged`,这个列表里面不带`*`的都可以删掉了，因为已经merged
 - 查看未合并的分支：`git branch --no-merged`,这个不能删除，只能用`git branch -D`强制删除
+- 显示本地和origin/master分支的diff文件名: `git diff origin/master HEAD --name-only`
+- 显示本地和origin/master分支的diff: `git diff origin/master HEAD`
+
+### tags
+- 查看所有tag：`git tag `
+- 查看tag详情：`git show $tagname`
+- 标签必须推送到远程：`git push origin --tags`
+- 更新到某个tag：`git checkout $tagname`
