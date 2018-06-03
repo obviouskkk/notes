@@ -4,13 +4,12 @@ date: 2018-06-03 22:28:37
 categories: c++
 tags: c++11
 ---
-### 一个例子
-
+`std::forward`比`std::move`逻辑略复杂，`std::move`是无条件把参数转换为右值，  
+而std::forward在特定情况下才会这样做：仅当参数是用右值初始化时，才会把它转换为右值。使用`std::forward`来转发参数一般被称为完美转发(也叫精确传递)。  
 ### 完美转发
-std::forward就比std::move简单多了，不过std::move是无条件把参数转换为右值，  
-而std::forward在特定情况下才会这样做：  仅当参数是用右值初始化时，才会把它转换为右值。  
-完美转发：左值／右值和 const/non-const。 精确传递就是在参数传递过程中，所有这些属性和参数值都不能改变。在泛型函数中，这样的需求非常普遍。
-- std::forward
+参数的属性通常包括：左值／右值和 const/non-const。 完美转发就是在参数传递过程中，所有这些属性和参数值都不能改变。在泛型函数中，这样的需求非常普遍。  
+
+- std::forward的大致实现如下：
 ```cpp
 template<typename T>          // 在命名空间std中
 T&& forward(typename remove_reference<T>::type& param)
