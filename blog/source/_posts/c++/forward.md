@@ -19,6 +19,8 @@ T&& forward(typename remove_reference<T>::type& param)
 ```
 一个模板函数接受全局引用，然后用std::forward把参数传递给另一个函数。
 
+### 示例分析
+
 - 如果传递给函数f的是个左值的Widget，T会被推断为Widget&：
 ```cpp
 Widget& && forward(typename remove_reference<Widget&>::type& param)
@@ -52,22 +54,12 @@ Widget&& forward(Widget& param)
 ```
 - 由函数返回的右值引用被定义为右值，在这种情况下，std::forward会把f的参数fParam（一个左值）转换成一个右值
 
-#### 是否可以摒弃std::move，只是用std::forward？
+### 是否可以摒弃std::move，只是用std::forward？
 从纯粹的技术角度看，答案是可以的：std::forward可以应付所有场景，std::move不是必须的。
 
-#### 例子
-```cpp
-Widget widgetFactory();      // 返回右值的函数
-Widget w;       // 一个变量，左值
-func(w);      // 用左值调用函数，T被推断为Widget&
-func(widgetFactory());     // 用右值调用函数，T被推断为Widget
-```
-下面又一些调用:
-```cpp
-auto&& w1 = w; // w是个左值，auto被推导成了 Widget&，折叠成 Widget& w
-auto&& w2 = widgetFactory(); // 函数返回时右值，右值初始化右值，auto推导为：Widget。
-```
-- typedef得到的，可能并不是你想要的类型,例如：
+
+### 注意事项
+#### typedef得到的，可能并不是你想要的类型,例如：
 ```cpp
 template<typename T>
 class Widget {
@@ -79,7 +71,7 @@ Widget<int&> w;
 // typedef int& && RvalueRefToT; --引用折叠-->typedef int& RvalueRefToT;
 ```
 
-### 避免对通用引用重载
+#### 避免对通用引用重载
 我认为这里应当成为特化：
 当一个模板实例化函数和一个非模板函数（即，一个普通函数）匹配度一样时，优先使用普通函数。在相同的签名下，拷贝构造（普通函数）胜过实例化模板函数。
 - 一个例子：
