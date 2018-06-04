@@ -10,6 +10,7 @@ tags: c++11
 参数的属性通常包括：左值／右值和 const/non-const。 完美转发就是在参数传递过程中，所有这些属性和参数值都不能改变。在泛型函数中，这样的需求非常普遍。  
 
 - std::forward的大致实现如下：
+<!-- more -->
 ```cpp
 template<typename T>          // 在命名空间std中
 T&& forward(typename remove_reference<T>::type& param)
